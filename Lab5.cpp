@@ -66,7 +66,7 @@ void printData(int empID[], double empRecord[][COLS])
         cout << left << setw(10) << empRecord[i][1];
         cout << left << setw(20) << empRecord[i][2];
         cout << left << setw(15) << empRecord[i][3];
-        cout << left << setw(10) << empRecord[i][4] << endl<< endl;
+        cout << left << setw(10) << empRecord[i][4] << endl;
    
     }
 }
@@ -98,7 +98,9 @@ int main()
     getData(empID, empRecord);
     calculatePayroll(empID, empRecord);
     printData(empID, empRecord);
+    cout << endl;
     highestOvertime(empID, empRecord);
+    cout << endl;
 
     return 0;
 }
