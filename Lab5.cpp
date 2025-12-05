@@ -1,4 +1,5 @@
 #include <iostream> 
+#include <iomanip>
 using namespace std;
 
 #define SIZE 5
@@ -56,16 +57,17 @@ void printData(int empID[], double empRecord[][COLS])
 {
     cout<<"Payroll Final Report" << endl;
     displayLine();
-    cout<<"ID\tHOURS\tRATE(RM)\tREGULAR\tPAY(RM)\tOVERTIME(RM)\tTOTAL(RM)"<< endl;
+    cout<< left << setw(10)<<"ID" <<  setw(10) <<"HOURS"<<  setw(10) <<"RATE (RM)"<<  setw(20) <<"REGULAR DAY(RM)"<<  setw(15) <<"OVERTIME(RM)"<<  setw(10) <<"TOTAL(RM)"<< endl;
     displayLine();
     for(int i=0; i<SIZE; i++)
     {
-        cout << empID[i] << " \t";
-        for(int c=0; c<COLS; c++)
-        {
-            cout << empRecord[i][c] << " \\t";
-        }
-        cout<< endl;
+        cout << left << setw(10) << empID[i];
+        cout << left << setw(10) << empRecord[i][0];
+        cout << left << setw(10) << empRecord[i][1];
+        cout << left << setw(20) << empRecord[i][2];
+        cout << left << setw(15) << empRecord[i][3];
+        cout << left << setw(10) << empRecord[i][4] << endl<< endl;
+   
     }
 }
 
